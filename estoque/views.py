@@ -37,6 +37,7 @@ def editar_produto(request,id):
         produto.preco = request.POST.get('preco')
         produto.fabricacao = request.POST.get('fabricacao')
         produto.save()
+        print(produto.preco)
         return redirect('listar_produtos')
     
     produto = {
@@ -46,7 +47,7 @@ def editar_produto(request,id):
             'preco':produto.preco,
             'fabricacao':produto.fabricacao
         }
-    
+    print(produto)
     return render(request,'editar_produto.html', {'produto':produto})
     
 
